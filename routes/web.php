@@ -17,3 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/admin/dashboard',[\App\Http\Controllers\HomeController::class,'index'])->name('admin');
+Route::get('/admin/crud/create',[\App\Http\Controllers\CrudController::class,'create'])->name('crud.create');
