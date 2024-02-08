@@ -9,15 +9,19 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Quick Example</h3>
+                <h3 class="card-title">Field the form</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="POST" enctype="multipart/form-data">
+              <form action="{{route('crud.store')}}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Name</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" name="name" placeholder="Enter Name">
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="name" placeholder="Enter Name">
+                    @error('name')
+                    <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Address</label>
