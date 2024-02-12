@@ -23,4 +23,5 @@ class UserSeeder extends Seeder
             'isAdmin' => '1',
         ]);
     }
+    
 }
